@@ -10,7 +10,8 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const newWithdrawAmount = parseFloat(newWithdrawAmountString);
     // console.log(newWithdrawAmount)
     withdrawField.value = '';
-    if(isNaN(newWithdrawAmount)){
+
+    if (isNaN(newWithdrawAmount)) {
         alert('please given valid number')
         return;
     }
@@ -22,8 +23,8 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const perviousWithdrawTotal = parseFloat(perviousWithdrawTotalString);
     // add number total ballance
 
-    
-  
+
+
 
 
     const balanceTotalElement = document.getElementById('balance-total');
@@ -31,20 +32,20 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const perviousBalanceTotal = parseFloat(perviousBalanceTotalString);
 
     // clear the deposit input value
-   
 
-    if(newWithdrawAmount > perviousWithdrawTotal){
+
+    if (newWithdrawAmount > perviousBalanceTotal) {
         alert('Invalid Amount');
 
         return;
     }
 
     const currentWithdrawTotal = perviousWithdrawTotal + newWithdrawAmount;
-    withdrawTotalElement.innerText = currentWithdrawTotal ;
-    
+    withdrawTotalElement.innerText = currentWithdrawTotal;
+
 
     const currentBalanceTotal = perviousBalanceTotal - newWithdrawAmount;
     // set the balance total
     balanceTotalElement.innerText = currentBalanceTotal;
-  
+
 })

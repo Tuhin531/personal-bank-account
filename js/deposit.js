@@ -11,7 +11,7 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     const newDepositAmount = parseFloat(newDepositAmountString);
     // console.log(depositAmount);
     depositField.value = '';
-    if(isNaN(newDepositAmount)){
+    if (isNaN(newDepositAmount)) {
         alert('please given valid number')
         return;
     }
@@ -28,7 +28,7 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     depositTotalElement.innerText = currentDepositTotal;
 
     // clear the deposit input value
-   
+
 
 
     // add amount total balance section
@@ -39,7 +39,7 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     const currentBalanceTotal = perviousBalanceTotal + newDepositAmount;
     // set the balance total
     balanceTotalElement.innerText = currentBalanceTotal;
-    
+
 
 
 
