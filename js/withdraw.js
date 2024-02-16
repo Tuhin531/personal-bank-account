@@ -9,6 +9,11 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     // change default string to number
     const newWithdrawAmount = parseFloat(newWithdrawAmountString);
     // console.log(newWithdrawAmount)
+    withdrawField.value = '';
+    if(isNaN(newWithdrawAmount)){
+        alert('please given valid number')
+        return;
+    }
 
 
     const withdrawTotalElement = document.getElementById('withdraw-total');
@@ -24,9 +29,9 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const balanceTotalElement = document.getElementById('balance-total');
     const perviousBalanceTotalString = balanceTotalElement.innerText;
     const perviousBalanceTotal = parseFloat(perviousBalanceTotalString);
-    
+
     // clear the deposit input value
-    withdrawField.value = '';
+   
 
     if(newWithdrawAmount > perviousWithdrawTotal){
         alert('Invalid Amount');
